@@ -1,14 +1,19 @@
 package Resuourse.Map;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Row {
     
-    public LinkedList<Box> row;
+    private ArrayList<Box> row;
 
 
-    public void addEmptyLast(int x, int y) {
-        row.addLast(new Path(x, y));
+    public void addEmptyLast() {
+
+    }
+
+
+    public Box getPos(int x) {
+        return row.get(x);
     }
 
 }

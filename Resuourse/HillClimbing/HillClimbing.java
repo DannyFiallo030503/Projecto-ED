@@ -12,8 +12,6 @@ public class HillClimbing {
     public ArrayList<Box> getNeighour(Box box) {
         ArrayList<Box> neighour = new ArrayList<Box>();
 
-        if (box.getX() > 0) 
-            neighour.addFirst(null);
 
         return neighour;
     }

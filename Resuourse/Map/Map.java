@@ -1,11 +1,11 @@
 package Resuourse.Map;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Map {
 
-    private LinkedList<Row> map;
+    private ArrayList<Row> map;
 
     private int width;
     private int height;
@@ -18,7 +18,7 @@ public class Map {
             Row row = new Row();
 
             for (int j = 0; j < y; j++) {
-                row.addEmptyLast(i, j);
+                
             }
 
             map.addLast(row);
@@ -33,18 +33,21 @@ public class Map {
     public void generatePosRobot() {
         Random rand = new Random();
         boolean stop = false;
+        int x;
+        int y;
 
         do {
 
-            int x = rand.nextInt(width);
-            int y = rand.nextInt(height);
+            x = rand.nextInt(width);
+            y = rand.nextInt(height);
 
-            if (map.get(x).row.get(y) instanceof Path) {
-                map.get(x).row.set(y, new Robot(x, y));
+            if (map.get(x).getPos(y) instanceof Path) {
                 stop = true;
-            } 
+            }
 
         } while(!stop);
+
+        map.get(x).getPos(y).
     }
 
 
