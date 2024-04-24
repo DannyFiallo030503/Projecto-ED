@@ -1,6 +1,8 @@
 package Resuourse.Map;
 
-public abstract class Box {
+import java.io.Serializable;
+
+public abstract class Box implements Serializable {
 
     public float CalcDist(int posX, int posY, int x, int y) {
         float dist = 0;

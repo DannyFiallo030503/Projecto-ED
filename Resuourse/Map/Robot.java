@@ -1,6 +1,6 @@
 package Resuourse.Map;
 
-public class Robot extends Box{
+public class Robot extends Box {
 
     public Robot() {
     }

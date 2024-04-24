@@ -1,5 +1,5 @@
 package Resuourse.Map;
 
-public class Obstacle extends Box{
+public class Obstacle extends Box {
     
 }
