@@ -21,6 +21,10 @@ public class Row implements Serializable {
         row.set(x, new Robot());
     }
 
+    public void setRoad(Position robot, Position toGo) {
+        row.set(robot.getY(), new Road(toGo));
+    }
+
     public void setObstacle(int x) {
         row.set(x, new Obstacle());
     }
@@ -31,5 +35,9 @@ public class Row implements Serializable {
 
     public ArrayList<Box> getRow() {
         return row;
+    }
+
+    public Box getPosition(Position box) {
+        return row.get(box.getY());
     }
 }

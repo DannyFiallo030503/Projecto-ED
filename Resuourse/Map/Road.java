@@ -1,31 +1,21 @@
 package Resuourse.Map;
 
-import java.io.Serializable;
 
-public class Road implements Serializable {
+public class Road extends Box {
 
-    private int toX;  
-    private int toY;
+    private Position toGo;
 
-    public Road(int toX, int toY) {
-        this.toX = toX;
-        this.toY = toY;
+    public Road(Position toGo) {
+        this.toGo = toGo;
     }
 
-    public int getToX() {
-        return toX;
+    public Position getToGo() {
+        return toGo;
     }
 
-    public void setToX(int toX) {
-        this.toX = toX;
+    public void setToGo(Position toGo) {
+        this.toGo = toGo;
     }
 
-    public int getToY() {
-        return toY;
-    }
-
-    public void setToY(int toY) {
-        this.toY = toY;
-    }
 
 }

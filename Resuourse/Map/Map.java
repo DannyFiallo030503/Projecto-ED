@@ -8,8 +8,9 @@ public class Map implements Serializable {
 
     private ArrayList<Row> map = new ArrayList<Row>();
 
-    private int width;
-    private int height;
+    private int width; // x
+    private int height; // y   
+    private Position endPos;
 
     public Map(int x, int y, int obst) {
         width = x;
@@ -33,7 +34,7 @@ public class Map implements Serializable {
         }
 
         //genera la posicion de la salida
-        generatePosEnd();
+        //generatePosEnd();
 
         // genera la posicion del robot
         generatePosRobot();
@@ -43,7 +44,7 @@ public class Map implements Serializable {
         map = null;
     }
 
-    public void generatePosRobot() {
+    public Position generatePosRobot() {
         Random rand = new Random();
         boolean stop = false;
         int x;
@@ -61,6 +62,8 @@ public class Map implements Serializable {
         } while(!stop);
 
         map.get(x).setRobot(y);
+
+        return new Position(x, y);
     }
 
     public void generatePosEnd() {
@@ -81,6 +84,7 @@ public class Map implements Serializable {
         } while(!stop);
 
         setPosEnd(x, y);
+        this.endPos = new Position(x,y);
     }
 
     public void setPosEnd(int x, int y) {
@@ -107,6 +111,47 @@ public class Map implements Serializable {
         map.get(x).setObstacle(y);
 
     }
+
+    public void setRoad(Position robot, Position toGo) {
+        map.get(robot.getX()).setRoad(robot, toGo);
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public Box getPosition(Position box) {
+        return map.get(box.getX()).getPosition(box);
+    }
+
+    public Position getEndPos() {
+        return endPos;
+    }
+
+    public void setEndPos(Position endPos) {
+        this.endPos = endPos;
+    }
+   
+    public ArrayList<Row> getMap() {
+        return map;
+    }
+
+    public void setMap(ArrayList<Row> map) {
+        this.map = map;
+    }
+
     
     public void showInTerminal() {
         for (int i = 0; i < map.size(); i++) {
@@ -119,7 +164,9 @@ public class Map implements Serializable {
                     System.out.print("R ");
                 else if (map.get(i).getRow().get(j) instanceof End)
                     System.out.print("E ");
-            }
+                else if (map.get(i).getRow().get(j) instanceof Path)
+                    System.out.print("P ");
+            }   
             System.out.println("");
         }
     }
