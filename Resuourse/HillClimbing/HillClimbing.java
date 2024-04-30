@@ -20,33 +20,45 @@ public class HillClimbing {
     }
 
     public boolean searchBestWay(Position robot) {
-        double minDistEclidian = Double.MAX_VALUE;
+        double minDistEclidian;
         Position temp = null;
         double euclid = 0;
+        boolean finish = false;
+        boolean found = false;
             
-        if (map.getPosition(robot) instanceof End) {
-            return true;
-        }
-
-        // tomo todos los vecinos de una posicion
-        ArrayList<Position> neighour = getNeighour(robot);
-
-        if (neighour.isEmpty()) {
-            return false;
-        }
-
-        // calculo la distancia euclidiana de los datos t 
-        for (int i = 0; i < neighour.size(); i++) {
-            euclid = calcDistanceEuclidian(neighour.get(i));
-            if (euclid < minDistEclidian) {
-                temp = neighour.get(i);
-                minDistEclidian = euclid;
+        while (!finish) {
+            minDistEclidian = Double.MAX_VALUE;
+            euclid = 0;
+            // condicion de parada por si llega al final
+            if (map.getPosition(robot) instanceof End) {
+                found = true;
+                finish = true;
             }
+
+            // tomo todos los vecinos de una posicion
+            ArrayList<Position> neighour = getNeighour(robot);
+
+            // condicion de parada si no hay mas camino
+            if (neighour.isEmpty()) {
+                finish = true;
+            }
+
+            // calculo la distancia euclidiana de los datos t 
+            for (int i = 0; i < neighour.size(); i++) {
+                euclid = calcDistanceEuclidian(neighour.get(i));
+                if (euclid < minDistEclidian) {
+                    temp = neighour.get(i);
+                    minDistEclidian = euclid;
+                }
+            }
+
+            map.setRoad(robot, temp);
+            robot = temp;
+            System.out.println();
+            showMapInTerminal();
         }
 
-        map.setRoad(robot, temp);
-
-        return searchBestWay(temp);
+        return found;
     }
 
     public double calcDistanceEuclidian(Position robot) {
@@ -60,22 +72,72 @@ public class HillClimbing {
     public ArrayList<Position> getNeighour(Position boxPos) {
         ArrayList<Position> neighour = new ArrayList<Position>();
 
-        if (boxPos.getX() > 0)
-            if (this.map.getPosition(boxPos.decrX()) instanceof Path)
-                neighour.add(boxPos.decrX());         
-
-        if (boxPos.getX() < map.getWidth())
-            if (this.map.getPosition(boxPos.incrX()) instanceof Path)
-                neighour.add(boxPos.incrX());
-
-        if (boxPos.getY() > 0)
-            if (this.map.getPosition(boxPos.decrY()) instanceof Path)
-                neighour.add(boxPos.decrY());
-
-        if (boxPos.getY() < map.getHeight())
-            if (this.map.getPosition(boxPos.incrY()) instanceof Path)
-                neighour.add(boxPos.incrY());
+        // reviso si tiene vecinos arriba abajo a la dereecha y la izquierda
+        isUp(boxPos, neighour);
+        isDown(boxPos, neighour);
+        isLeft(boxPos, neighour);
+        isRigth(boxPos, neighour);
 
         return neighour;
+    }
+
+    private boolean isUp(Position boxPos, ArrayList<Position> neighour) {
+        boolean have = true;
+
+        try {
+            if (this.map.getPosition(boxPos.decrX()) instanceof Path || this.map.getPosition(boxPos.decrX()) instanceof End) {
+                neighour.add(boxPos.decrX());    
+            } 
+        } catch (IndexOutOfBoundsException e) {
+            have = false;
+        }
+
+        return have;
+    }
+
+    private boolean isDown(Position boxPos, ArrayList<Position> neighour) {
+        boolean have = true;
+
+        try {
+            if (this.map.getPosition(boxPos.incrX()) instanceof Path || this.map.getPosition(boxPos.incrX()) instanceof End) {
+                neighour.add(boxPos.incrX());
+            }
+        } catch (IndexOutOfBoundsException e) {
+            have = false;
+        }
+
+        return have;
+    }
+
+    private boolean isLeft(Position boxPos, ArrayList<Position> neighour) {
+        boolean have = true;
+
+        try {
+            if (this.map.getPosition(boxPos.decrY()) instanceof Path || this.map.getPosition(boxPos.decrY()) instanceof End) {
+                neighour.add(boxPos.decrY());
+            }
+        } catch (IndexOutOfBoundsException e) {
+            have = false;
+        }
+
+        return have;
+    }
+
+    private boolean isRigth(Position boxPos, ArrayList<Position> neighour) {
+        boolean have = true;
+
+        try {
+            if (this.map.getPosition(boxPos.incrY()) instanceof Path || this.map.getPosition(boxPos.incrY()) instanceof End) {
+                neighour.add(boxPos.incrY());
+            }
+        } catch (IndexOutOfBoundsException e) {
+            have = false;
+        }
+
+        return have;
+    }    
+
+    public void showMapInTerminal() {
+        map.showInTerminal();
     }
 }

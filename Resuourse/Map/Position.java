@@ -1,6 +1,10 @@
 package Resuourse.Map;
 
-public class Position {
+import java.io.Serializable;
+
+public class Position implements Serializable{
+
+    private static final long serialVersionUID = 12L;
 
     private int x;  
     private int y;
@@ -24,18 +28,18 @@ public class Position {
     }
 
     public Position incrX() {
-        return new Position(x++, y);
+        return new Position(x + 1, y);
     }
 
     public Position decrX() {
-        return new Position(x--, y);
+        return new Position(x - 1, y);
     }
 
     public Position incrY() {
-        return new Position(x, y++);
+        return new Position(x, y + 1);
     }
     
     public Position decrY() {
-        return new Position(x, y--);
+        return new Position(x, y - 1);
     }
 }

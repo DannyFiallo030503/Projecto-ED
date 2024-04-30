@@ -3,6 +3,8 @@ package Resuourse.Map;
 
 public class Road extends Box {
 
+    private static final long serialVersionUID = 17L;
+
     private Position toGo;
 
     public Road(Position toGo) {

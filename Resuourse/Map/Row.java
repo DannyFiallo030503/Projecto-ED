@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Row implements Serializable {
+
+    private static final long serialVersionUID = 19L;
     
     private ArrayList<Box> row = new ArrayList<Box>();
 

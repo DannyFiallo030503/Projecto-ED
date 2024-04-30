@@ -6,6 +6,8 @@ import java.util.Random;
 
 public class Map implements Serializable {
 
+    private static final long serialVersionUID = 11L;
+
     private ArrayList<Row> map = new ArrayList<Row>();
 
     private int width; // x
@@ -34,10 +36,10 @@ public class Map implements Serializable {
         }
 
         //genera la posicion de la salida
-        //generatePosEnd();
+        generatePosEnd();
 
         // genera la posicion del robot
-        generatePosRobot();
+        //generatePosRobot();
     }
 
     public Map() {
@@ -164,7 +166,7 @@ public class Map implements Serializable {
                     System.out.print("R ");
                 else if (map.get(i).getRow().get(j) instanceof End)
                     System.out.print("E ");
-                else if (map.get(i).getRow().get(j) instanceof Path)
+                else if (map.get(i).getRow().get(j) instanceof Road)
                     System.out.print("P ");
             }   
             System.out.println("");
