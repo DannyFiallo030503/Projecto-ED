@@ -1,14 +1,45 @@
 package Resuourse.Map;
 
-import java.util.LinkedList;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Row {
+public class Row implements Serializable {
+
+    private static final long serialVersionUID = 19L;
     
-    public LinkedList<Box> row;
+    private ArrayList<Box> row = new ArrayList<Box>();
 
 
-    public void addEmptyLast(int x, int y) {
-        row.addLast(new Path(x, y));
+    public void addEmptyFirst() {
+        row.add(new Path());
     }
 
+
+    public Box getPos(int x) {
+        return row.get(x);
+    }
+
+    public void setRobot(int x) {
+        row.set(x, new Robot());
+    }
+
+    public void setRoad(Position robot, Position toGo) {
+        row.set(robot.getY(), new Road(toGo));
+    }
+
+    public void setObstacle(int x) {
+        row.set(x, new Obstacle());
+    }
+
+    public void setEnd(int x) {
+        row.set(x, new End());
+    }
+
+    public ArrayList<Box> getRow() {
+        return row;
+    }
+
+    public Box getPosition(Position box) {
+        return row.get(box.getY());
+    }
 }
