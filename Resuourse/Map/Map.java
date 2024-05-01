@@ -46,6 +46,49 @@ public class Map implements Serializable {
         map = null;
     }
 
+    public int getRowSize() {
+        return map.size();
+    }
+
+    public Map getRows() {
+        return map;
+    }
+
+    public boolean eliminateRobot() {
+        boolean isDeleter = false;
+        Position robot = searchRobot();
+        
+        if(robot != null) {
+            deletPosition(robot);
+            isDeleter = true;
+        }
+
+        return isDeleter;
+    }
+
+    public void setRobot(Position robot) {
+        map.get(robot.getX()).setRobot(robot.getY());
+    }
+
+    public void deletPosition(Position position) {
+        map.get(position.getX()).remuve(position.getY());
+    }
+
+    public Position searchRobot() {
+        Position robot = null;
+
+        for (int i = 0; i < map.size() && robot == null; i++) {
+            for (int j = 0; j < map.get(i).size() && robot == null; j++) {
+                if (map.get(i).get(j) instanceof Robot) {
+                    robot = new Position(i, j);
+                }
+            }
+        }
+
+        return robot;
+    }
+
+
     public Position generatePosRobot() {
         Random rand = new Random();
         boolean stop = false;
