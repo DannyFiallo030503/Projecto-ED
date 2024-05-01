@@ -14,6 +14,25 @@ public class Row implements Serializable {
         row.add(new Path());
     }
 
+    public int size() {
+        return row.size();
+    }
+
+    public Box get(int x) {
+        return row.get(x);
+    }
+
+    public void remuve(int x) {
+        row.set(x, new Path());
+    }
+
+    public void setRobot(int x) {
+        row.set(x, new Robot());
+    }
+
+    public getBoxsSize() {
+        return row.size();
+    }
 
     public Box getPos(int x) {
         return row.get(x);

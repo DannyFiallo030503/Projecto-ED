@@ -1,11 +1,18 @@
 package Resuourse.HillClimbing;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
+import java.util.Random;
 
 import Resuourse.Map.End;
 import Resuourse.Map.Map;
 import Resuourse.Map.Path;
 import Resuourse.Map.Position;
+import Resuourse.Map.Row;
+import Resuourse.Data.Convert;
+
 
 public class HillClimbing {
     
@@ -17,6 +24,30 @@ public class HillClimbing {
 
     public HillClimbing(Map map) {
         this.map = map;
+    }
+
+    public void saveMap(File fileDirectory) {
+        try {
+            // abro fichero
+            RandomAccessFile file = new RandomAccessFile(fileDirectory, "rw");
+
+            file.writeInt(map.getRowSize());
+            ArrayList<Row> rows = map.getRows();
+
+            for (Row r : rows) {
+                file.writeInt(r.getBoxsSize());
+
+                ArrayList<Box> boxs = r.getRow();
+                for (Box b : boxs) {
+                    byte[] bb = Convert.toBytes(b)
+                    file.writeInt(bb.length);
+                    file.write(bb);
+                }
+            }
+            file.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean searchBestWay(Position robot) {
@@ -139,5 +170,15 @@ public class HillClimbing {
 
     public void showMapInTerminal() {
         map.showInTerminal();
+    }
+
+    public boolean eliminateRobot() {
+        boolean isDeleter = false;
+        isDeleter = map.eliminateRobot();
+        return isDeleter;
+    }
+
+    public setRobot(Position position) {
+        map.setRobot(position);
     }
 }

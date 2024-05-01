@@ -11,7 +11,9 @@ public class Main {
     Position robot = map.generatePosRobot();
     map.showInTerminal();
     System.out.println("");
-    HillClimbing hillClimbing = new HillClimbing(map);
+    HCC modul = new HCC();
+    modul.setMap(5, 5, 5);
+    modul.setRobot(new Position(3, 4));
     boolean search = hillClimbing.searchBestWay(robot);
     System.out.println(search);
     hillClimbing.showMapInTerminal();
