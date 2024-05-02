@@ -30,7 +30,7 @@ public class HCC {
     }
     public boolean saveMap(String name) {
         boolean save = true;
-        try(DataOutputStream dos = new DataOutputStream(new FileOutputStream(name), true)) {
+        try(DataOutputStream dos = new DataOutputStream(new FileOutputStream(name))) {
             fileDirectory = new File(name);
             // se guardan los datos
             hillClim.saveMap(fileDirectory);
@@ -39,5 +39,13 @@ public class HCC {
         }
 
         return save;
+    }
+
+    public boolean searchBestWay(Position robot) {
+        return hillClim.searchBestWay(robot);
+    }
+
+    public void showMapInTerminal() {
+        hillClim.showMapInTerminal();
     }
 }

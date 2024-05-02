@@ -11,6 +11,7 @@ import Resuourse.Map.Map;
 import Resuourse.Map.Path;
 import Resuourse.Map.Position;
 import Resuourse.Map.Row;
+import Resuourse.Map.Box;
 import Resuourse.Data.Convert;
 
 
@@ -39,7 +40,7 @@ public class HillClimbing {
 
                 ArrayList<Box> boxs = r.getRow();
                 for (Box b : boxs) {
-                    byte[] bb = Convert.toBytes(b)
+                    byte[] bb = Convert.toBytes(b);
                     file.writeInt(bb.length);
                     file.write(bb);
                 }
@@ -178,7 +179,7 @@ public class HillClimbing {
         return isDeleter;
     }
 
-    public setRobot(Position position) {
+    public void setRobot(Position position) {
         map.setRobot(position);
     }
 }

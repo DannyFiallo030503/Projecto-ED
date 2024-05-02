@@ -50,7 +50,7 @@ public class Map implements Serializable {
         return map.size();
     }
 
-    public Map getRows() {
+    public ArrayList<Row> getRows() {
         return map;
     }
 
