@@ -1,8 +1,9 @@
-package Resuourse.Map;
+package scr.Resuourse.Map;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
+import scr.Resuourse.Map.*;
 
 public class Map implements Serializable {
 
@@ -38,8 +39,6 @@ public class Map implements Serializable {
         //genera la posicion de la salida
         generatePosEnd();
 
-        // genera la posicion del robot
-        //generatePosRobot();
     }
 
     public Map() {

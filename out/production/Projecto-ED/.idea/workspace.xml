@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6256199-f871-4b98-a2c3-2d1a425ca4eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resuourse/HCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Resuourse/HCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resuourse/HillClimbing/HillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/Resuourse/HillClimbing/HillClimbing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resuourse/Map/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/Resuourse/Map/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/HCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/HCC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/HillClimbing/HillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/HillClimbing/HillClimbing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Box.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/End.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/End.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Road.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Road.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scr/Resuourse/Map/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/Map/Row.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +28,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -57,7 +68,7 @@
       <workItem from="1713967577362" duration="79000" />
       <workItem from="1714445818293" duration="497000" />
       <workItem from="1714446363334" duration="11000" />
-      <workItem from="1714615656589" duration="343000" />
+      <workItem from="1714615656589" duration="1933000" />
     </task>
     <servers />
   </component>

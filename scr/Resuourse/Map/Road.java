@@ -1,4 +1,4 @@
-package Resuourse.Map;
+package scr.Resuourse.Map;
 
 
 public class Road extends Box {

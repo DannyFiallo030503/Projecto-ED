@@ -1,12 +1,12 @@
-package Resuourse;
+package scr.Resuourse;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import Resuourse.HillClimbing.HillClimbing;
-import Resuourse.Map.Map;
-import Resuourse.Map.Position;
+import scr.Resuourse.HillClimbing.HillClimbing;
+import scr.Resuourse.Map.Map;
+import scr.Resuourse.Map.Position;
 
 public class HCC {
 
@@ -41,8 +41,13 @@ public class HCC {
         return save;
     }
 
-    public boolean searchBestWay(Position robot) {
-        return hillClim.searchBestWay(robot);
+    public boolean searchBestWay() {
+        Position robot = hillClim.searchRobot();
+        boolean search = false;
+        if (robot != null) {
+            search = hillClim.searchBestWay(robot);
+        }
+        return search;
     }
 
     public void showMapInTerminal() {
