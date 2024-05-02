@@ -5,23 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6256199-f871-4b98-a2c3-2d1a425ca4eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Projecto-ED/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Data/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/HCC.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/HillClimbing/HillClimbing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/HillClimbing/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Box.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/End.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Map.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Obstacle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Path.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Position.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Road.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Robot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Map/Row.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto-ED/Resuourse/Readme.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/Resuourse/HCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/HCC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/Resuourse/HillClimbing/HillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Resuourse/HillClimbing/HillClimbing.java" afterDir="false" />
@@ -85,7 +68,7 @@
       <workItem from="1713967577362" duration="79000" />
       <workItem from="1714445818293" duration="497000" />
       <workItem from="1714446363334" duration="11000" />
-      <workItem from="1714615656589" duration="2435000" />
+      <workItem from="1714615656589" duration="1933000" />
     </task>
     <servers />
   </component>

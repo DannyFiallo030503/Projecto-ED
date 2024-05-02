@@ -1,4 +1,4 @@
-package Resuourse.Map;
+package scr.Resuourse.Map;
 
 import java.io.Serializable;
 

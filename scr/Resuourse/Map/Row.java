@@ -1,4 +1,4 @@
-package Resuourse.Map;
+package scr.Resuourse.Map;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class Row implements Serializable {
         row.set(x, new Robot());
     }
 
-    public getBoxsSize() {
+    public int getBoxsSize() {
         return row.size();
     }
 
@@ -38,9 +38,6 @@ public class Row implements Serializable {
         return row.get(x);
     }
 
-    public void setRobot(int x) {
-        row.set(x, new Robot());
-    }
 
     public void setRoad(Position robot, Position toGo) {
         row.set(robot.getY(), new Road(toGo));

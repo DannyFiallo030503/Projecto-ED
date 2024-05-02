@@ -1,4 +1,4 @@
-package Resuourse.HillClimbing;
+package scr.Resuourse.HillClimbing;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,11 +6,12 @@ import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Resuourse.Map.End;
-import Resuourse.Map.Map;
-import Resuourse.Map.Path;
-import Resuourse.Map.Position;
-import Resuourse.Map.Row;
+import scr.Resuourse.Map.End;
+import scr.Resuourse.Map.Map;
+import scr.Resuourse.Map.Path;
+import scr.Resuourse.Map.Position;
+import scr.Resuourse.Map.Row;
+import scr.Resuourse.Map.Box;
 import Resuourse.Data.Convert;
 
 
@@ -39,7 +40,7 @@ public class HillClimbing {
 
                 ArrayList<Box> boxs = r.getRow();
                 for (Box b : boxs) {
-                    byte[] bb = Convert.toBytes(b)
+                    byte[] bb = Convert.toBytes(b);
                     file.writeInt(bb.length);
                     file.write(bb);
                 }
@@ -178,7 +179,11 @@ public class HillClimbing {
         return isDeleter;
     }
 
-    public setRobot(Position position) {
+    public void setRobot(Position position) {
         map.setRobot(position);
+    }
+
+    public Position searchRobot() {
+        return map.searchRobot();
     }
 }
